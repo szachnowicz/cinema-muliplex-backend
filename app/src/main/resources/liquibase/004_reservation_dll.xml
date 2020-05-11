@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="szachnowicz" id="dll for reservation and middle table">
+
+
+        <createTable tableName="reservation">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+            <column name="reservation_time" type="TIMESTAMP"/>
+            <column name="price" type="DECIMAL(10, 2)"/>
+            <column name="name" type="VARCHAR(25)"/>
+            <column name="last_name" type="VARCHAR(25)"/>
+            <column name="is_confirmed" type="BOOLEAN" defaultValue="false"/>
+            <column name="reservation_uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+            <column name="movie_offer_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_movie_offer_id" references="movie_offer(id)"/>
+            </column>
+
+        </createTable>
+
+        <createTable tableName="reserved_seats">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+
+            <column name="reservation_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_reservation_id" references="reservation(id)"/>
+            </column>
+            <column name="seat_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_seat_id" references="seat(id)"/>
+            </column>
+            <column name="ticket_type" type="VARCHAR(20)"/>
+        </createTable>
+
+
+        <insert tableName="reservation">
+            <column name="id">1231234</column>
+            <column name="reservation_time">2020-04-30 10:11</column>
+            <column name="price">15.00</column>
+            <column name="movie_offer_id">1</column>
+            <column name="name">Steven</column>
+            <column name="last_name">Sigoul</column>
+        </insert>
+
+        <insert tableName="reserved_seats">
+            <column name="id">1235</column>
+            <column name="reservation_id">1231234</column>
+            <column name="seat_id">1</column>
+        </insert>
+
+
+    </changeSet>
+</databaseChangeLog>

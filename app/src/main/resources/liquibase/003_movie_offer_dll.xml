@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="szachnowicz" id="dll for movieoffert and ">
+        <createTable tableName="movie_offer">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+            <column name="cinema_id" type="INT"/>
+            <column name="screening_time" type="TIMESTAMP"/>
+            <column name="movie_name" type="varchar(200)"/>
+            <column name="movie_details" type="varchar(500)"/>
+            <column name="cinema_hall_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_cinema_hall_mf" references="cinema_hall(id)"/>
+            </column>
+        </createTable>
+        <insert tableName="movie_offer">
+            <column name="id">1</column>
+            <column name="screening_time">2020-05-30 10:15</column>
+            <column name="movie_name">Avatar</column>
+            <column name="movie_details">Wars, loves and much more</column>
+            <column name="cinema_hall_id">1001</column>
+        </insert>
+        <insert tableName="movie_offer">
+            <column name="id">2</column>
+            <column name="screening_time">2020-05-30 11:15</column>
+            <column name="movie_name">Tarzan</column>
+            <column name="movie_details">Jungle, monkeys and gorily</column>
+            <column name="cinema_hall_id">1011</column>
+        </insert>
+
+        <insert tableName="movie_offer">
+            <column name="id">3</column>
+            <column name="screening_time">2020-05-31 11:15</column>
+            <column name="movie_name">Boże ciało</column>
+            <column name="movie_details">New film by Jan Komasa, the director of SUICIDE ROOM (Sala Samobójców) and WARSAW 44 </column>
+            <column name="cinema_hall_id">1011</column>
+        </insert>
+
+    </changeSet>
+
+        </databaseChangeLog>

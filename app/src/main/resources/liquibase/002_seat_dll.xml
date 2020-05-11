@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="szachnowicz" id="dll for seat with insert">
+        <createTable tableName="seat">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+            <column name="code" type="VARCHAR(4)"/>
+            <column name="cinema_hall_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_cinema_hall_id" references="cinema_hall(id)"/>
+            </column>
+        </createTable>
+
+        <insert tableName="seat">
+            <column name="id">1</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A1</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">2</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A2</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">3</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A3</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1004</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A4</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1005</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A5</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1006</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A6</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1007</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A7</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1008</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A8</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1009</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A9</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">10010</column>
+            <column name="cinema_hall_id">1001</column>
+            <column name="code">A10</column>
+        </insert>
+
+        <insert tableName="seat">
+            <column name="id">1011</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A1</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1012</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A2</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1013</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A3</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1014</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A4</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1015</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A5</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1016</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A6</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1017</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A7</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1018</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A8</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1019</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A9</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">10110</column>
+            <column name="cinema_hall_id">1011</column>
+            <column name="code">A10</column>
+        </insert>
+
+
+        <!--CITY HALL 3 -->
+        <insert tableName="seat">
+            <column name="id">1111</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A1</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1112</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A2</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1113</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A3</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1114</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A4</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1115</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A5</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1116</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A6</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1117</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A7</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1118</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A8</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">1119</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A9</column>
+        </insert>
+        <insert tableName="seat">
+            <column name="id">11110</column>
+            <column name="cinema_hall_id">1111</column>
+            <column name="code">A10</column>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>
