@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet author="szachnowicz" id="ddl for Halls and dml">
+
+        <sql>CREATE SEQUENCE hibernate_sequence START 1891;</sql>
+        <createTable tableName="cinema_hall">
+            <column name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="uuid" type="VARCHAR(36)" defaultValueComputed="random_uuid()"/>
+            <column name="hall_name" type="varchar(5)"/>
+            <column name="cinema_id" type="INT"/>
+            <column name="seat_number" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="cinema_hall">
+            <column name="id">1001</column>
+            <column name="hall_name">A1</column>
+            <column name="cinema_id">999</column>
+            <column name="seat_number">10</column>
+        </insert>
+
+        <insert tableName="cinema_hall">
+            <column name="id">1011</column>
+            <column name="hall_name">A2</column>
+            <column name="cinema_id">999</column>
+            <column name="seat_number">10</column>
+        </insert>
+        <insert tableName="cinema_hall">
+            <column name="id">1111</column>
+            <column name="hall_name">A3</column>
+            <column name="cinema_id">999</column>
+            <column name="seat_number">10</column>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>
